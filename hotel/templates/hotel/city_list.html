@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>City selection</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" />
+    <style>
+        body {
+            background-color: #FFE4B2; /* Light orange background */
+        }
+        input.input {
+            background-color: #F0F8FF; /* Light pastel color */
+            color: #333;
+        }
+        .button.is-success {
+            background-color: #9370DB; /* Light purple */
+            color: #fff; /* White text */
+        }
+        .footer {
+            background-color: #EC7063;
+        }
+        .box {
+            background-color: #D7BDE2;
+            color: #17202A;
+        }
+    </style>
+</head>
+<nav class="navbar">
+    <div class="container">
+        <a class="button is-primary is-outlined" href="{% url 'home' %}">Home Page</a>
+    </div>
+</nav>
+<body>
+    <section class="hero is-warning">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    City selection
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-4 is-4">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-4 is-4">
+                    {% for city in object_list %}
+                    <div class="column is-one-third">
+                        <div class="box">
+                            <a href="{% url 'hotel_list' city.city_code %}">{{ city.city_name }}</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    </footer>
+</body>
+</html>
