@@ -6,7 +6,7 @@ This Django project allows you to manage hotel data, including city information 
 
 ## Prerequisites
 
-Docker: https://docs.docker.com/desktop/install/windows-install/
+Docker: https://docs.docker.com/desktop/install/
 Python 3.10 (included in the Docker image)
 Installation
 
@@ -23,6 +23,8 @@ cd case
 ```
 
 ## Running the Application
+
+Create a env.py file with DATA_USERNAME and DATA_PASSWORD in hotel_project directory of your project
 
 Build the Docker Image:
 
